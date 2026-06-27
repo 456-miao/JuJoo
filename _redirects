@@ -1,0 +1,5 @@
+# Netlify 代理配置：把同源 /api/minimax、/api/novelai 转发到官方接口，
+# 解决浏览器跨域(CORS)，让 MiniMax 语音/音乐、NovelAI 生图在部署后可用。
+# 200 = 服务器端转发（rewrite），浏览器视作同源请求，不触发 CORS。
+/api/minimax/*  https://api.minimax.chat/:splat  200
+/api/novelai/*  https://image.novelai.net/:splat  200
